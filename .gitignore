@@ -97,3 +97,8 @@ tests/test-tokenizer-0-llama
 tests/test-tokenizer-0-falcon
 tests/test-tokenizer-1-llama
 tests/test-tokenizer-1-bpe
+
+finetuning/llama-2-7b-miniguanaco/
+finetuning/saved_model_directory/
+finetuning/results/
+finetuning/.ipynb_checkpoints/
