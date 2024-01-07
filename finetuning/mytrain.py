@@ -42,7 +42,9 @@ from datetime import datetime
 model_name = "NousResearch/Llama-2-7b-chat-hf"
 
 # The instruction dataset to use
-dataset_name = "mlabonne/guanaco-llama2-1k"
+#dataset_name = "mlabonne/guanaco-llama2-1k"
+#dataset_name= "elliotthwang/guanaco-llama2-chinese-1k"
+dataset_name="baohuynhbk14/vietnamese-guanaco-llama2-1k"
 
 # Fine-tuned model name
 new_model = "llama-2-7b-miniguanaco"
