@@ -1,17 +1,24 @@
-from datasets import load_dataset
+from datasets import load_dataset,Dataset
+import pandas as pd
 
-#dataset_name = "mlabonne/guanaco-llama2-1k"
-#dataset_name= "elliotthwang/guanaco-llama2-chinese-1k"
-#dataset_name="baohuynhbk14/vietnamese-guanaco-llama2-1k"
-dataset_name= "maywell/korean_textbooks"
-dataset=load_dataset(dataset_name,"tiny-textbooks")
-dataset['train'] = dataset['train'].select(range(1000))
+def load_my_dataset(data_files):
+    df = pd.read_csv(data_files)
+    dataset = Dataset.from_pandas(df)
+    return dataset
+
+# Path to your data file
+data_file = './mydata.csv'
+
+# Load the dataset
+dataset = load_my_dataset(data_file)
+
+# Show location and information of the dataset
 print(dataset)
 
-
-
 # Displaying the first entry of the dataset
-print("First entry:", dataset['train'][0])
+print("First entry:", dataset[0])
 
 # Displaying the last entry of the dataset
-print("Last entry:", dataset['train'][-1])
+print("Last entry:", dataset[-1])
+
+

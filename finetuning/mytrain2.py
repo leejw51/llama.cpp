@@ -14,7 +14,7 @@
 
 import os
 import torch
-from datasets import load_dataset,Dataset
+from datasets import load_dataset
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -27,17 +27,11 @@ from transformers import (
 from peft import LoraConfig, PeftModel
 from trl import SFTTrainer
 from datetime import datetime
-import pandas as pd
+
 
 # In[ ]:
 
 
-
-
-def load_my_dataset(data_files):
-    df = pd.read_csv(data_files)
-    dataset = Dataset.from_pandas(df)
-    return dataset
 
 
 
@@ -155,12 +149,7 @@ packing = False
 device_map = {"": 0}
 
 # Load dataset (you can process it here)
-#dataset = load_dataset(dataset_name, split="train")
-# Path to your data file
-data_file = './mydata.csv'
-# Load the dataset
-dataset = load_my_dataset(data_file)
-
+dataset = load_dataset(dataset_name, split="train")
 
 # Load tokenizer and model with QLoRA configuration
 compute_dtype = getattr(torch, bnb_4bit_compute_dtype)
