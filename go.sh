@@ -1,5 +1,5 @@
 #./compile.sh
-#./finetune.sh
+./finetune.sh
 
 # get f16
 python convert.py ./finetuning/mymodel
